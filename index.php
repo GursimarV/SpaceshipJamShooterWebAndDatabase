@@ -19,7 +19,7 @@
         <style>
            body
            {           
-            background-image: url('pictures/PixelSpace.jpeg');
+            background-image: url('pictures/PixelSpace.JPEG');
 
             height: 100%
 
@@ -52,7 +52,7 @@
 
                 <button type="submit">
                     <a href="LoginPage.php">
-                        <a href="SpacePixelLoginIn.png"> </a>
+                        <a href="pictures/SpacePixelLoginIn.PNG"> </a>
                     </a>
                 </button>
                 

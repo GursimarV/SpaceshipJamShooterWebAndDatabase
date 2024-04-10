@@ -17,7 +17,17 @@
 
 .index-container h1
 {
-    font-family: "VT323";
+    margin: 5% 0;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color:white;
+}
+
+.index-container h2
+{
+    margin: 5% 0;
+    font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
     color:white;

@@ -32,4 +32,42 @@
         </style>
 
     </head>
+
+    <body>
+        <main>
+            <div class="container">
+                <h1>
+                    Logging In
+                </h1>
+
+                <div class="index-container">
+                    <label for="username">
+                        <img src="pictures/UsernameSpacePixel.PNG" alt="Username"/>
+                    </label>
+                    
+                    <input type="text" id="username" name="username" placeholder="Enter Username">
+                </div>
+
+                <div class="index-container">
+                    <label for="userpassword">
+                        <img src="pictures/PasswordSpacePixel.PNG" alt="Password"/>
+                    </label>
+                    
+                    <input type="text" id="userpassword" name="userpassword" placeholder="Enter Password">
+                </div>
+
+                <button type="submit">
+                    <a href="LoginPage.php">
+                        <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
+                    </a>
+                </button>
+
+                <button type="submit">
+                    <a href="index.php">
+                        <img src="pictures/GoBackButton.PNG" alt="BackButton"/>
+                    </a>
+                </button>
+            </div>
+        </main>
+    </body>
 </html>

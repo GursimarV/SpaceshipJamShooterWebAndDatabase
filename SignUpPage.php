@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
 
         <title>
-            SpaceShip Jam Shooter Login Page
+            SpaceShip Jam Shooter SignUp Page
         </title>
 
         <link rel="stylesheet" href="css/style.css">
@@ -34,6 +34,8 @@
     </head>
 
     <body>
-        
+        <div class="container">
+            
+        </div>
     </body>
 </html>

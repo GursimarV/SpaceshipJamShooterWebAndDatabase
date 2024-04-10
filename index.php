@@ -45,11 +45,11 @@
                 <button type="submit">
                     <a href="SignUpPage.php">
 
-                        <img src="pictures/SignUpSpaceButton.PNG" alt="LoginButton"/>
+                        <img src="pictures/SignUpSpaceButton.PNG" alt="SignUpButton"/>
                     </a>
                 </button> 
 
-                
+                <br>
 
                 <button type="submit">
                     <a href="LoginPage.php">

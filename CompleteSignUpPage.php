@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
 
         <title>
-            SpaceShip Jam Shooter Login Page
+            SpaceShip Jam Shooter Complete SignUp
         </title>
 
         <link rel="stylesheet" href="css/style.css">
@@ -39,6 +39,16 @@
                 <h1>
                     Alright, Your profile has now been set up!!!
                 </h1>
+
+                <h1>
+                    Click the button to go to your profile:
+                </h1>
+
+                <button type="submit">
+                   
+                    <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
+                    
+                </button>
             </section>
         </div>
     </body>

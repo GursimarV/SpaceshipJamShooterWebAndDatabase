@@ -15,8 +15,16 @@
 
         <style>
            body
-           {            
+           {           
+            background-image: url('pictures/PixelSpace.jpeg');
+
             height: 100%
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
            }
         </style>
 
@@ -26,18 +34,16 @@
         <div class="container">
             <div class="index-container">
                 <h1>
-                    Welcome to the Streets!
+                    SpaceShip
                 </h1>
 
-                <h3>
-                    (The streets of the background image!!!)
-                </h3>
-
-                <h2>
-                    Want to sign up and be a part of the streets? 
-                </h2>
-
                 <br>
+
+                <h1>
+                    Jam Shooter
+                </h1>
+
+                
             </div>
         </div>
     </body>

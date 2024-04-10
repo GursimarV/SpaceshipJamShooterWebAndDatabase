@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
 
         <title>
-            SpaceShip Jam Shooter Home Page
+            SpaceShip Jam Shooter Login Page
         </title>
 
         <link rel="stylesheet" href="css/style.css">
@@ -18,47 +18,28 @@
 
         <style>
            body
-           {           
+           {
             background-image: url('pictures/PixelSpace.jpeg');
 
-            height: 100%
+            height: 100%; 
 
             background-position: center;
 
             background-repeat: no-repeat;
-
+            
             background-size: cover;
            }
-
-           
         </style>
 
     </head>
-    
+
     <body>
-        <div class="container">
-            <div class="index-container">
+        <div class="sign-container">
+            <section>
                 <h1>
-                    SpaceShip Jam Shooter
+                    Alright, Your profile has now been set up!!!
                 </h1>
-
-                <button type="submit">
-                    <a href="SignUpPage.php">
-
-                        <img src="pictures/SignUpSpaceButton.PNG" alt="LoginButton"/>
-                    </a>
-                </button> 
-
-                
-
-                <button type="submit">
-                    <a href="LoginPage.php">
-
-                        <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
-                    </a>
-                </button>
-                
-            </div>
+            </section>
         </div>
     </body>
 </html>

@@ -19,7 +19,7 @@
         <style>
            body
            {
-            background-image: url('pictures/PixelSpace.JPEG');
+            background-image: url('pictures/PixelSpace.jpeg');
 
             height: 100%; 
 
@@ -32,3 +32,4 @@
         </style>
 
     </head>
+</html>

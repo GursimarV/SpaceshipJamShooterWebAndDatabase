@@ -9,7 +9,6 @@
 .index-container
 {
     text-align: center;
-    flex-direction: column;
 
     max-width: 30%;
     margin: 0 auto;
@@ -21,6 +20,7 @@
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
+    font-size: 75px;
     color:white;
 }
 
@@ -30,5 +30,6 @@
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
+    font-size: xx-large;
     color:white;
 }

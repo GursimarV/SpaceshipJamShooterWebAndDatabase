@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Sedgwick+Ave&family=VT323&display=swap');
 
+
 .container 
 {
     display: flex;
     align-items: flex-start;
+    min-height: 100vh;
 }
 
 .index-container

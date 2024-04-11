@@ -20,15 +20,19 @@
            body
            {
             background-image: url('pictures/PixelSpace.jpeg');
-
-            height: 100%; 
-
             background-position: center;
-
             background-repeat: no-repeat;
-            
             background-size: cover;
            }
+           h1
+            {
+                margin: 5% 0;
+                font-family: "VT323", monospace;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 75px;
+                color:white;
+            }
         </style>
 
     </head>
@@ -39,22 +43,24 @@
                 Welcome to the sign up page!
             </h1>
             
-            <br>
-            
             <h1>
                 Sign up here to become one of the street people!
             </h1>
 
-            <label for="username">Username:</label>
+            <label for="username">
+                <img src="pictures/UsernameSpacePixel.png" alt="Username">
+            </label>
                 <input type="text" id="username" name="username" placeholder="Enter A Username">
 
             <br>
 
-            <label for="userpassword">Password:</label>
+            <label for="userpassword">
+                <img src="pictures/PasswordSpacePixel.png" alt="Password">
+            </label>
             <input type="text" id="userpassword" name="userpassword" placeholder="Enter A Password">
 
             <button type="submit">
-                    <a href="SignUpPage.php">
+                    <a href="CompleteSignUpPage.php">
 
                         <img src="pictures/SignUpSpaceButton.PNG" alt="SignUpButton"/>
                     </a>

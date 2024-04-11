@@ -20,15 +20,20 @@
            body
            {
             background-image: url('pictures/PixelSpace.jpeg');
-
-            height: 100%; 
-
             background-position: center;
-
             background-repeat: no-repeat;
-            
             background-size: cover;
            }
+
+           h1
+           {
+                margin: 5% 0;
+                font-family: "VT323", monospace;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 75px;
+                color:white;
+            }
         </style>
 
     </head>

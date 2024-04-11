@@ -20,21 +20,26 @@
            body
            {
             background-image: url('pictures/PixelSpace.jpeg');
-
-            height: 100%; 
-
             background-position: center;
-
             background-repeat: no-repeat;
-            
             background-size: cover;
            }
+
+           h1
+            {
+                margin: 5% 0;
+                font-family: "VT323", monospace;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 75px;
+                color:white;
+            }
         </style>
 
     </head>
 
     <body>
-        <div class="sign-container">
+        <div class="container">
             <section>
                 <h1>
                     Alright, Your profile has now been set up!!!
@@ -45,9 +50,9 @@
                 </h1>
 
                 <button type="submit">
-                   
-                    <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
-                    
+                    <a href="LoginPage.php">
+                        <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
+                    </a>
                 </button>
             </section>
         </div>

@@ -35,7 +35,38 @@
 
     <body>
         <div class="container">
+            <h1>
+                Welcome to the sign up page!
+            </h1>
             
+            <br>
+            
+            <h1>
+                Sign up here to become one of the street people!
+            </h1>
+
+            <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter A Username">
+
+            <br>
+
+            <label for="userpassword">Password:</label>
+            <input type="text" id="userpassword" name="userpassword" placeholder="Enter A Password">
+
+            <button type="submit">
+                    <a href="SignUpPage.php">
+
+                        <img src="pictures/SignUpSpaceButton.PNG" alt="SignUpButton"/>
+                    </a>
+            </button> 
+
+            <br>
+
+            <button type="submit">
+                    <a href="index.php">
+                        <img src="pictures/GoBackButton.PNG" alt="BackButton"/>
+                    </a>
+                </button>
         </div>
     </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2024 at 01:30 AM
+-- Generation Time: Apr 11, 2024 at 01:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,13 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `playerinfo`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `playerinfo` (
   `id` int(11) NOT NULL,
-  `username` varchar(16) NOT NULL,
-  `password` varchar(25) NOT NULL
+  `missionsComplete` int(11) NOT NULL,
+  `enemiesFought` int(11) NOT NULL,
+  `shipUpgrades` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -38,20 +39,20 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `playerinfo`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `playerinfo`
+  ADD KEY `playerData` (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- Constraints for table `playerinfo`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `playerinfo`
+  ADD CONSTRAINT `playerData` FOREIGN KEY (`id`) REFERENCES `player` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

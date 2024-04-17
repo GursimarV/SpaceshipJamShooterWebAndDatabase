@@ -1,4 +1,34 @@
 <?php
+
+$con = mysqli_connect('localhost', 'root', '', 'test');
+
+if(mysqli_connect_errno()){
+    printf("Connect falied: %s\n", mysqli_connect_errno());
+    exit();
+}
+
+if(isset($_REQUEST["username"], $_REQUEST["userpassword"])){
+    $username = $_REQUEST['username'];
+    $userpassword = $_REQUEST['userpassword'];
+    
+    $query = "select * from player where username = '".$username."'";
+    $result = mysqli_query($con, $query);
+    
+    while($row = mysqli_fetch_assoc($result)){
+        if($row['password'] == $userpassword){
+            printf("Success");
+            $userID = $row['id'];   
+        } else {
+            printf("Username and password do not match.");
+        }
+    }
+
+    if(!empty($userID)){
+        header("Location: ProfilePage.php?user=$userID");
+        exit();
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,27 +75,29 @@
                     Logging In
                 </h1>
 
-                <div class="index-container">
-                    <label for="username">
-                        <img src="pictures/UsernameSpacePixel.PNG" alt="Username"/>
-                    </label>
-                    
-                    <input type="text" id="username" name="username" placeholder="Enter Username">
-                </div>
+                <form action="LoginPage.php">
+                    <div class="index-container">
+                        <label for="username">
+                            <img src="pictures/UsernameSpacePixel.PNG" alt="Username"/>
+                        </label>
 
-                <div class="index-container">
-                    <label for="userpassword">
-                        <img src="pictures/PasswordSpacePixel.PNG" alt="Password"/>
-                    </label>
-                    
-                    <input type="text" id="userpassword" name="userpassword" placeholder="Enter Password">
-                </div>
+                        <input type="text" id="username" name="username" placeholder="Enter Username">
+                    </div>
 
-                <button type="submit">
-                    <a href="LoginPage.php">
-                        <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
-                    </a>
-                </button>
+                    <div class="index-container">
+                        <label for="userpassword">
+                            <img src="pictures/PasswordSpacePixel.PNG" alt="Password"/>
+                        </label>
+                        
+                        <input type="text" id="userpassword" name="userpassword" placeholder="Enter Password">
+                    </div>
+
+                    <button type="submit">
+                        <a href="LoginPage.php">
+                            <img src="pictures/LoginSpaceButton.PNG" alt="LoginButton"/>
+                        </a>
+                    </button>
+                </form>
 
                 <button type="submit">
                     <a href="index.php">

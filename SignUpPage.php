@@ -1,4 +1,32 @@
 <?php
+
+$con = mysqli_connect('localhost', 'root', '', 'test');
+
+if(mysqli_connect_errno()){
+    printf("Connect failed: %s\n", mysqli_connect_errno());
+    exit();
+}
+
+if(isset($_REQUEST["username"], $_REQUEST["userpassword"])){
+    $username = $_REQUEST['username'];
+    $userpassword = $_REQUEST['userpassword'];
+
+    $sql = "INSERT INTO player (username, password) VALUES ('".$username."', '".$userpassword."');";
+    $rs = mysqli_query($con, $sql);
+
+    $query = "select id from player where username = '".$username."'";
+    $result = mysqli_query($con, $query);
+
+    while($row = mysqli_fetch_assoc($result)){
+        $userID = $row['id'];
+    }
+
+    if(!empty($userID)){
+        header("Location: CompleteSignUpPage.php");
+        exit();
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,24 +75,25 @@
                 Sign up here to become one of the street people!
             </h1>
 
-            <label for="username">
-                <img src="pictures/UsernameSpacePixel.png" alt="Username">
-            </label>
-                <input type="text" id="username" name="username" placeholder="Enter A Username">
+            <form action="SignUpPage.php">
+                <label for="username">
+                    <img src="pictures/UsernameSpacePixel.png" alt="Username">
+                </label>
+                    <input type="text" id="username" name="username" placeholder="Enter A Username">
 
-            <br>
+                <br>
 
-            <label for="userpassword">
-                <img src="pictures/PasswordSpacePixel.png" alt="Password">
-            </label>
-            <input type="text" id="userpassword" name="userpassword" placeholder="Enter A Password">
+                <label for="userpassword">
+                    <img src="pictures/PasswordSpacePixel.png" alt="Password">
+                </label>
+                <input type="text" id="userpassword" name="userpassword" placeholder="Enter A Password">
 
-            <button type="submit">
-                    <a href="CompleteSignUpPage.php">
-
-                        <img src="pictures/SignUpSpaceButton.PNG" alt="SignUpButton"/>
-                    </a>
-            </button> 
+                <button type="submit">
+                        <a href="CompleteSignUpPage.php">
+                            <img src="pictures/SignUpSpaceButton.PNG" alt="SignUpButton"/>
+                        </a>
+                </button> 
+            </form>
 
             <br>
 

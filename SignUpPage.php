@@ -21,6 +21,9 @@ if(isset($_REQUEST["username"], $_REQUEST["userpassword"])){
         $userID = $row['id'];
     }
 
+    $s = "INSERT INTO playerinfo (id, score) VALUES ('".$userID."', '0');";
+    $r = mysqli_query($con, $s);
+
     if(!empty($userID)){
         header("Location: CompleteSignUpPage.php");
         exit();

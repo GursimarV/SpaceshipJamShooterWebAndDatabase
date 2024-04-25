@@ -2,8 +2,8 @@
 
 $con = mysqli_connect('localhost', 'root', '', 'test');
 
-if (mysqli_connect_errno()){
-    printf("Connect falied: %s\n", mysqli_connect_errno());
+if(mysqli_connect_errno()){
+    printf("Connect failed: %s\n", mysqli_connect_errno());
     exit();
 }
 
@@ -13,16 +13,8 @@ $query = "select username from player where id = '".$userID."'";
 $result = mysqli_query($con, $query);
 
 while($row = mysqli_fetch_assoc($result)){
-    $username = $row['username'];
-} 
-
-$q = "select * from playerinfo where id = '".$userID."'";
-$r = mysqli_query($con, $q);
-
-while($row = mysqli_fetch_assoc($r)){
-    $score = $row['score'];
-} 
-
+   $username = $row['username'];   
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +23,7 @@ while($row = mysqli_fetch_assoc($r)){
         <meta charset="UTF-8">
 
         <title>
-            <?php echo $username;?>&apos;s Page
+            Edit Page
         </title>
 
         <link rel="stylesheet" href="css/style.css">
@@ -48,9 +40,8 @@ while($row = mysqli_fetch_assoc($r)){
             background-repeat: no-repeat;
             background-size: cover;
            }
-
            h1
-           {
+            {
                 margin: 5% 0;
                 font-family: "VT323", monospace;
                 font-weight: 400;
@@ -61,33 +52,39 @@ while($row = mysqli_fetch_assoc($r)){
         </style>
 
     </head>
+
     <body>
-        <main>
-            <div class="container">
+        <div class="container">
+            <h1>
+                Editing <?php echo $username;?>&apos;s Page
+            </h1>
+
+            <form action="Update.php">
+                <input type="hidden" name="user" value="<?php echo $userID;?>">
+                <label for="username">
+                    <img src="pictures/UsernameSpacePixel.png" alt="Username">
+                </label>
+                    <input type="text" id="username" name="username" placeholder="Enter A New Username">
+
+                <br>
+
+                <label for="userpassword">
+                    <img src="pictures/PasswordSpacePixel.png" alt="Password">
+                </label>
+                <input type="text" id="userpassword" name="userpassword" placeholder="Enter A New Password">
+
                 <button type="submit">
-                    <a href="index.php">
-                        <!--img src="pictures/GoBackButton.PNG" alt="BackButton"/-->
-                        <p>Sign Out</p>
+                    <p>Save</p>
+                </button> 
+            </form>
+
+            <br>
+
+            <button type="submit">
+                    <a href="ProfilePage.php?user=<?php echo $userID;?>">
+                        <img src="pictures/GoBackButton.PNG" alt="BackButton"/>
                     </a>
                 </button>
-                <button type="submit">
-                    <a href="EditPage.php?user=<?php echo $userID;?>">
-                        <!--img src="pictures/GoBackButton.PNG" alt="BackButton"/-->
-                        <p>Edit Profile</p>
-                    </a>
-                </button>
-
-                <h1>
-                <?php echo $username;?>&apos;s Page
-                </h1>
-
-                <div id="score">
-                    <h2>Score</h2>
-                    <p>
-                    <?php echo $score;?>
-                    </p>
-                </div>         
-            </div>
-        </main>
+        </div>
     </body>
 </html>

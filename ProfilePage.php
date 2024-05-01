@@ -86,7 +86,22 @@ while($row = mysqli_fetch_assoc($r)){
                     <p>
                     <?php echo $score;?>
                     </p>
-                </div>         
+                </div>  
+                
+                <br>
+                <h2>Friends</h2>
+                <br>
+
+                <?php
+                try
+                {
+
+                }
+                catch (PDOException $e)
+                {
+                    die("Query Failed: " . $e->getMessage());
+                }
+                ?>
             </div>
         </main>
     </body>

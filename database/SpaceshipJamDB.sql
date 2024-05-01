@@ -10,3 +10,9 @@ create TABLE playerinfo(
 	score int,
 	foreign key (id) references player(id)
 );
+
+create TABLE friendinfo(
+	friend_id int(3) NOT NULL,
+	score int,
+	foreign key (friend_id) references player(id)
+);

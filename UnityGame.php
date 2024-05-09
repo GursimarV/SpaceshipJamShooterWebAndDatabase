@@ -1,7 +1,7 @@
 <?php
 
 $unityEnteredScore = $_POST['score'];
-
+$unityPlayerID = $_POST['id'];
 
 $con = mysqli_connect('localhost', 'root', '', 'test');
 
@@ -11,20 +11,7 @@ if(mysqli_connect_errno()){
 }
 
 // Adding the sent in data from Unity to Database
-$sql = "INSERT INTO playerinfo (score) VALUES ('".$unityEnteredScore."');";
+$sql = "INSERT INTO playerinfo (id, score) VALUES ('".$unityPlayerID."', '".$unityEnteredScore."');";
 $rs = mysqli_query($con, $sql);
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Game Info</title>
-</head>
-<body>
-    <h1>Game Data</h1>
-    <h5>Display score here</h5>
-</body>
-</html>

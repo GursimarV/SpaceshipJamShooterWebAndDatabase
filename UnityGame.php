@@ -1,7 +1,10 @@
 <?php
 
 $unityEnteredScore = $_POST['score'];
-$unityPlayerID = $_POST['id'];
+$unityUsername = $_POST['username'];
+
+
+//$unityPlayerID = $_POST['id'];
 
 $con = mysqli_connect('localhost', 'root', '', 'test');
 
@@ -9,6 +12,13 @@ if(mysqli_connect_errno()){
     printf("Connect failed: %s\n", mysqli_connect_errno());
     exit();
 }
+
+$query = "select * from player where username = '".$unityUsername."'";
+$result = mysqli_query($con, $query);
+
+while ($row = mysqli_fetch_assoc($result)){
+    $unityPlayerID = $row['id'];   
+};
 
 // Adding the sent in data from Unity to Database
 $sql = "INSERT INTO playerinfo (id, score) VALUES ('".$unityPlayerID."', '".$unityEnteredScore."');";

@@ -17,11 +17,11 @@ $query = "select * from player where username = '".$unityUsername."'";
 $result = mysqli_query($con, $query);
 
 while ($row = mysqli_fetch_assoc($result)){
-    $unityPlayerID = $row['id'];   
+    $unityPlayerID = $row['id'];
 };
 
 // Adding the sent in data from Unity to Database
-$sql = "INSERT INTO playerinfo (id, score) VALUES ('".$unityPlayerID."', '".$unityEnteredScore."');";
+$sql = "Update playerinfo set score='".$unityEnteredScore."' where id = '".$unityPlayerID."';";
 $rs = mysqli_query($con, $sql);
 
 ?>

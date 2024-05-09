@@ -21,8 +21,7 @@ $r = mysqli_query($con, $q);
 
 while($row = mysqli_fetch_assoc($r)){
     $score = $row['score'];
-} 
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ while($row = mysqli_fetch_assoc($r)){
             background-size: cover;
            }
 
-           h1
+           h1, h2
            {
                 margin: 5% 0;
                 font-family: "VT323", monospace;
@@ -57,6 +56,34 @@ while($row = mysqli_fetch_assoc($r)){
                 font-style: normal;
                 font-size: 75px;
                 color:white;
+            }
+
+            p 
+            {
+                font-style: normal;
+                font-size: 50px;
+                color:white;
+            }
+
+            button
+            {
+                font-size: 25px;
+                background-color: black;
+                color: white;
+                border: 2px solid blue;
+                border-radius: 15%;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }   
+            
+            table, th, td
+            {
+                border: 3px solid white;
+                width: 50%;
+                color: white;
             }
         </style>
 
@@ -67,13 +94,13 @@ while($row = mysqli_fetch_assoc($r)){
                 <button type="submit">
                     <a href="index.php">
                         <!--img src="pictures/GoBackButton.PNG" alt="BackButton"/-->
-                        <p>Sign Out</p>
+                        Sign Out
                     </a>
                 </button>
                 <button type="submit">
                     <a href="EditPage.php?user=<?php echo $userID;?>">
                         <!--img src="pictures/GoBackButton.PNG" alt="BackButton"/-->
-                        <p>Edit Profile</p>
+                        Edit Profile
                     </a>
                 </button>
 
@@ -86,7 +113,49 @@ while($row = mysqli_fetch_assoc($r)){
                     <p>
                     <?php echo $score;?>
                     </p>
-                </div>         
+                </div>  
+
+                <div id="friends">
+                    <h2>Friends</h2>
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <th>Score</th>
+                        </tr>
+                        <?php 
+                            $friendList = "select * from friendinfo where id = '".$userID."'";
+                            $r = mysqli_query($con, $friendList);
+
+                            while($row = mysqli_fetch_assoc($r)){
+                                $friendID = $row['friend_id'];
+                                echo "<tr>";
+                                $x = "select * from player where id = '".$friendID."'";
+                                $t = mysqli_query($con, $x);
+                                while($row = mysqli_fetch_assoc($t)){
+                                    $friendUsername = $row['username'];
+                                    echo "<td>$friendUsername</td>";
+                                }
+                                $x = "select * from playerinfo where id = '".$friendID."'";
+                                $t = mysqli_query($con, $x);
+                                while($row = mysqli_fetch_assoc($t)){
+                                    $friendScore = $row['score'];
+                                    echo "<td>$friendScore</td>";
+                                }
+                                echo "</tr>";
+                            }
+                        ?>
+                    </table>
+                    <form action="AddFriend.php">
+                        <input type="hidden" name="user" value="<?php echo $userID;?>">
+                        <label for="friendUsername">
+                            <img src="pictures/UsernameSpacePixel.png" alt="Username">
+                        </label>
+                        <input type="text" id="friendUsername" name="friendUsername" placeholder="Enter A Friend's Username">
+                        <button type="submit">
+                            <p>Add Friend</p>
+                        </button>
+                    </form>
+                </div>
             </div>
         </main>
     </body>
